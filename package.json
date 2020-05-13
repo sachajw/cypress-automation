@@ -1,0 +1,14 @@
+{
+  "name": "automation",
+  "version": "1.0.0",
+  "description": "practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sacha Wharton",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^4.5.0"
+  }
+}
