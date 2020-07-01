@@ -16,11 +16,13 @@ describe('My First Test Suite', function()
         cy.get('.products').find('.product').should('have.length',4);
         //add two to the cart for the second product
         cy.get('.products').find('.product').eq(2).contains('ADD TO CART').click();
-        
-
-
+        //add capisicum and cashews to the cart
+        cy.get('.products').find('.product').each(($el, index, $list) => {
+        //traversing through an array
+        const testVeg=$el.find('h4.product-name').text();
+        if(testVeg.includes('Cashews'));
+        {
+            $el.find('button').click();    
+        }
     } )
-
-    
-
 } )
