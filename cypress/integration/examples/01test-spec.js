@@ -25,12 +25,12 @@ describe('My First Test Suite', function()
         {
             $el.find('button').click();    
         }
-    } )
+    } );
         const log=cy.get('.brand').then(function(logelement)
         {
-         cy.log(logelement.text())
-        })
-        const log=cy.get('.brand')
+         cy.log(logelement.text());
+        });
+        const log=cy.get('.brand');
         //cy.log(log.text())
 
 
