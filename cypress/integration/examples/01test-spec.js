@@ -12,13 +12,16 @@ describe('My First Test Suite', function()
         //selenium get hits the url in browser, cypress get acts like FindElement in selenium
         //display 4 products and visible only
         cy.get('.product:visible').should('have.length',4);
-        //parent child chaining
-        cy.get('.products').find('.product').should('have.length',4);
+        //parent child chaining and aliasing
+        cy.get('.products').as('productLocator')
+        cy.get('@productLocator').find('.product').should('have.length',4);
         //add two to the cart for the second product
-        cy.get('.products').find('.product').eq(2).contains('ADD TO CART').click();
+        cy.get('.@productLocator').find('.product').eq(2).contains('ADD TO CART').click();
+        //output terminal and browser console
+        console.log('sf')
         //traversing through an array
         //add capisicum and cashews to the cart
-        cy.get('.products').find('.product').each(($el, index, $list) => {
+        cy.get('@productLocator').find('.product').each(($el, index, $list) => {
         //variable
         const testVeg=$el.find('h4.product-name').text();
         if(testVeg.includes('Cashews'));
@@ -30,7 +33,7 @@ describe('My First Test Suite', function()
         {
          cy.log(logelement.text());
         });
-        const log=cy.get('.brand');
+        //const log=cy.get('.brand');
         //cy.log(log.text())
 
 
