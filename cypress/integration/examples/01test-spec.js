@@ -28,7 +28,10 @@ describe('My First Test Suite', function()
         {
             $el.find('button').click();    
         }
-    } );
+    } );//assert if logo text is correctly dispalyed
+        cy.get('brand').should(have.text, "GREENCART");
+        
+        //this prints out logs
         const log=cy.get('.brand').then(function(logelement)
         {
          cy.log(logelement.text());
