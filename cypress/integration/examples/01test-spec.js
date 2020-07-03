@@ -19,10 +19,18 @@ describe('My First Test Suite', function()
         //add capisicum and cashews to the cart
         cy.get('.products').find('.product').each(($el, index, $list) => {
         //traversing through an array
+        //variable
         const testVeg=$el.find('h4.product-name').text();
         if(testVeg.includes('Cashews'));
         {
             $el.find('button').click();    
         }
     } )
+        const log=cy.get('.brand').then(function(logelement)
+        {
+         cy.log(logelement.text())
+        })
+        //cy.log(log.text())
+
+
 } )
