@@ -30,6 +30,7 @@ describe('My First Test Suite', function()
         {
          cy.log(logelement.text())
         })
+        const log=cy.get('.brand')
         //cy.log(log.text())
 
 
