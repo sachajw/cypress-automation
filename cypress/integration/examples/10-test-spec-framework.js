@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe('fixtures and before', function() 
+describe('before after test one', function() 
 {
     before(function() {
         //runs once before all tests in the block
@@ -10,18 +10,10 @@ this.data=data;
         });
     });
 
-it('fixtures',function() {
+it('before after test one',function() {
     cy.visit('https://rahulshettyacademy.com/angularpractice/');
     //this is a global variable and makes the data available everywhere and that is how you call it
     cy.get('input[name="name"]:nth-child(2)').type(this.data.name);
     cy.get('select').select(this.data.gender);
-    cy.get(':nth-child(4) > .ng-untouched').should('have.value',this.data.name);
-    //validating attributes
-    cy.get('input[name="name"]:nth-child(2)').should('have.attr','minlength','2');
-    cy.get('#inlineRadio3').should('be.disabled');
-    cy.get(':nth-child(2) > .nav-link').click();
-    //custom cypress cmd created in command.js - dynamic data and not hardcoded
-    cy.selectProduct('Blackberry');
-    cy.selectProduct('Nokia Edge');
-    });
+});
 });

@@ -23,3 +23,15 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+//new cmd created called selectProduct
+Cypress.Commands.add("selectProduct", (productName) => {
+//going through the different products
+//$e1 can be anything random as long as they match
+    cy.get('h4.card-title').each(($el, index, $list) => {
+        if($el.text().includes(productName))
+        {
+            cy.get('button.btn.btn-info').eq(index).click();
+        }
+        });
+});
