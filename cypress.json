@@ -1,6 +1,5 @@
 {
   "defaultCommandTimeout": 6000,
   "pageLoadTimeout": 10000,
-  "projectId": "ba94xz",
-  "baseUrl": "https://rahulshettyacademy.com/seleniumPractise/#/"
-}
+  "projectId": "ba94xz"
+  }
