@@ -20,8 +20,12 @@ it('fixtures',function() {
     cy.get('input[name="name"]:nth-child(2)').should('have.attr','minlength','2');
     cy.get('#inlineRadio3').should('be.disabled');
     cy.get(':nth-child(2) > .nav-link').click();
+    //use an array in your support/command.js file to specify multiple objects/products
     //custom cypress cmd created in command.js - dynamic data and not hardcoded
-    cy.selectProduct('Blackberry');
-    cy.selectProduct('Nokia Edge');
+    this.data.productName
+    
+    this.data.productName.forEach(function(element) {
+        cy.selectProduct(element);        
+    });
     });
 });
