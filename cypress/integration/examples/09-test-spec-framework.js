@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
-import HomePage from '../pageObjects/HomePage';
-import ProductsPage from '../pageObjects/ProductsPage';
+import HomePage from '../../integration/pageObjects/HomePage';
+import ProductsPage from '../../integration/pageObjects/ProductsPage';
 
 describe('fixtures and before', function() 
 {
