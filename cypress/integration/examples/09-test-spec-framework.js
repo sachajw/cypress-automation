@@ -19,7 +19,7 @@ it('fixtures',function() {
     const productsPage=new ProductsPage();
 
     cy.visit('https://rahulshettyacademy.com/angularpractice/');
-    
+    //cypress cmds resolving the promise
     homePage.getEditBox().type(this.data.name);
     homePage.getGender().select(this.data.gender);
     homePage.getTwoWayDataBinding().should('have.value',this.data.name);
@@ -41,16 +41,29 @@ it('fixtures',function() {
     cy.get('tr td:nth-child(4) strong').each(($el, index, $list) => {
     //used log to understand the output
     //cy.log($el.text());
+    //Non Cypress cmds to resolve the promise
     const amount=$el.text();
     //to reuse a variable use var over const
     var res=amount.split(" ");
     res=res[1].trim();
-    sum=sum+res;
-    cy.log(res);
+    sum=Number(sum)+Number(res);
 //₹. 50000
 //res[0]=₹.
 //res[1]=50000;
+    //logs the sum after the loop has done its thing with the elements then logs the sum
+    }).then(function()
+    {
+        cy.log(sum);
     });
+    cy.get('h3 strong').then(function(element)
+    {
+        const amount=element.text();
+        //to reuse a variable use var over const
+        var res=amount.split(" ");
+        var total=res[1].trim();
+        expect(Number(total)).to.equal(sum)
+    });
+
     cy.contains('Checkout').click();
     cy.get('#country').type('India');
     cy.get('.suggestions > ul > li > a');
@@ -59,6 +72,7 @@ it('fixtures',function() {
     //cy.get('.alert').should('have.text','Success! Thank you! Your order will be delivered in next few weeks :-).');
     cy.get('.alert').then(function(element)
     {
+        const actualText=element.text();
         expect(actualText.includes("Success!")).to.be.true
     });
     //this is a global variable and makes the data available everywhere and that is how you call it
