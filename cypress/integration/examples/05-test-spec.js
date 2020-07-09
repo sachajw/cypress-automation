@@ -4,8 +4,8 @@ describe('My First Test Suite', function()
 {
 
 it('My First Test case',function() {
-
-cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
+//using environment variables from cypress.json with concatenation
+cy.visit(Cypress.env('url')+"/AutomationPractice/");
 //web tables - selecting the entire second coloumn
 cy.get('tr td:nth-child(2)').each(($e1, index, $list) => {
 

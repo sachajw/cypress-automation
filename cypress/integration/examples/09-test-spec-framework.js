@@ -18,7 +18,8 @@ it('fixtures',function() {
     const homePage=new HomePage();
     const productsPage=new ProductsPage();
 
-    cy.visit('https://rahulshettyacademy.com/angularpractice/');
+    //using environment variables from cypress.json with concatenation
+    cy.visit(Cypress.env('url')+"/angularpractice/'");
     //cypress cmds resolving the promise
     homePage.getEditBox().type(this.data.name);
     homePage.getGender().select(this.data.gender);

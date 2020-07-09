@@ -4,7 +4,9 @@ describe('My First Test Suite', function()
 {
     it('My First Test case',function() {
 
-        cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/");
+        //using environment variables from cypress.json with concatenation
+        cy.visit(Cypress.env('url')+"/seleniumPractice/");
+
         //typing in the search box
         cy.get('.search-keyword').type('ca');
         //adding a hard wait of 2s for the products to load properly

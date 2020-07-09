@@ -4,8 +4,10 @@ describe('My First Test Suite', function()
 {
 
 it('My First Test case',function() {
+//check boxes
+//using environment variables from cypress.json with concatenation
+cy.visit(Cypress.env('url')+"/AutomationPractice/");
 
-cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
 //handling child windows
 cy.get('#opentab').then(function(el)
 {

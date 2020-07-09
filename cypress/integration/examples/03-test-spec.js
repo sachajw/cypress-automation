@@ -4,7 +4,9 @@ describe('My First Test Suite', function()
 {
     it('My First Test case',function() {
 
-        cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
+        //using environment variables from cypress.json with concatenation
+        cy.visit(Cypress.env('url')+"/AutomationPractice/");
+
         //check more reliable than click
         cy.get('#checkBoxOption1').check().should('be.checked').and('have.value','option1');
         cy.get('#checkBoxOption1').uncheck().should('not.be.checked');

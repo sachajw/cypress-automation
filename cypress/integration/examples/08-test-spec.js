@@ -6,7 +6,8 @@ describe('iFrames Test', function() {
 
 it('Testing iFrames',function() {
 
-cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
+//using environment variables from cypress.json with concatenation
+cy.visit(Cypress.env('url')+"/AutomationPractice/");
 //handling frames
 cy.frameLoaded('#courses-iframe');
 cy.iframe().find("a[href*='mentorship']").eq(0).click();

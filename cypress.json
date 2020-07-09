@@ -3,5 +3,10 @@
   "pageLoadTimeout": 10000,
   "projectId": "ba94xz",
   "viewportHeight": 768,
-  "viewportWidth": 1024
+  "viewportWidth": 1024,
+  "env":
+  {
+    "url" : "https://rahulshettyacademy.com"
+  } 
+
   }
