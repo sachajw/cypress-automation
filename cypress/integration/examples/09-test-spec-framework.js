@@ -7,7 +7,8 @@ describe('fixtures and before', function()
     before(function() {
         //runs once before all tests in the block
         cy.fixture('example').then(function(data)
-        { //this is a global variable and makes the data available everywhere
+        { 
+//this is a global variable and makes the data available everywhere
 this.data=data;
         });
     });
@@ -24,6 +25,8 @@ it('fixtures',function() {
     homePage.getTwoWayDataBinding().should('have.value',this.data.name);
     homePage.getEditBox().should('have.attr','minlength','2');
     homePage.getEntrepreneur().should('be.disabled');
+    //explicitly declared for this spec file
+    Cypress.config('defaultCommandTimeout', 8000);
     homePage.getShopTab().click();
 
     this.data.productName
@@ -32,6 +35,10 @@ it('fixtures',function() {
         cy.selectProduct(element);        
     });
     productsPage.checkOutButton().click();
+    cy.contains('Checkout').click();
+    cy.get('#country').type('India');
+    cy.get('.suggestions > ul > li > a');
+
     
     //this is a global variable and makes the data available everywhere and that is how you call it
     //cy.get('input[name="name"]:nth-child(2)').type(this.data.name);

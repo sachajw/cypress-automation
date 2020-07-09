@@ -1,5 +1,5 @@
 {
-  "defaultCommandTimeout": 6000,
+  "defaultCommandTimeout": 8000,
   "pageLoadTimeout": 10000,
   "projectId": "ba94xz",
   "viewportHeight": 1080,
