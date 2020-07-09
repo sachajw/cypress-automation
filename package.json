@@ -4,12 +4,18 @@
   "description": "practice",
   "main": "index.js",
   "scripts": {
-    "test": "cypress open"
+    "test": "cypress run",
+    "headTest": "npm run test -- --headed",
+    "chromeTest": "npm run test -- --browser chrome",
+    "recordDashBoardTest": "npm run test -- --record --key 342d07a0-2327-4a96-a816-e076429cbb4b --reporter mochawesome",
+    "GreencartTest": "npm run test -- --spec \"../integration/Greencart/*\"",
+    "Framework": "npm run test -- --spec \"../integration/Framework/*\""
   },
   "author": "Sacha Wharton",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^4.10.0",
-    "cypress-iframe": "^1.0.1"
+    "cypress-iframe": "^1.0.1",
+    "mochawesome": "^6.1.1"
   }
 }
