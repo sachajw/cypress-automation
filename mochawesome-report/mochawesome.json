@@ -1,23 +1,80 @@
 {
   "stats": {
-    "suites": 0,
-    "tests": 0,
-    "passes": 0,
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2020-07-09T14:02:37.504Z",
-    "end": "2020-07-09T14:02:37.513Z",
-    "duration": 9,
-    "testsRegistered": 0,
-    "passPercent": null,
-    "pendingPercent": null,
+    "start": "2020-07-09T14:44:15.929Z",
+    "end": "2020-07-09T14:44:36.332Z",
+    "duration": 20403,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false
   },
   "results": [
-    false
+    {
+      "uuid": "e550ab30-444a-4abd-aae9-4792e56128ca",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\03-test-spec.js",
+      "file": "cypress\\integration\\examples\\03-test-spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1d2f390e-ed78-49eb-9dd8-ea9f6ff10753",
+          "title": "My First Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My First Test case",
+              "fullTitle": "My First Test Suite My First Test case",
+              "timedOut": null,
+              "duration": 15429,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//using environment variables from cypress.json with concatenation\ncy.visit(Cypress.env('url') + \"/AutomationPractice/\"); //check more reliable than click\ncy.get('#checkBoxOption1').check().should('be.checked').and('have.value', 'option1');\ncy.get('#checkBoxOption1').uncheck().should('not.be.checked');\ncy.get(\"input[type=checkbox]\").check(['option2', 'option3']); //static dropdown \ncy.get('select').select('option2').should('have.value', 'option2'); //dynamic dropdown\ncy.get('#autocomplete').type('ind');\ncy.get('.ui-menu-item div').each(function ($e1, index, $list) {\n  if ($e1.text() === \"India\") {\n    $e1.click();\n  }\n});\ncy.get('#autocomplete').should('have.value', 'India'); //hidden and visible elements\ncy.get('#displayed-text').should('be.visible');\ncy.get('#hide-textbox').click();\ncy.get('#displayed-text').should('not.be.visible');\ncy.get('#show-textbox').click();\ncy.get('#displayed-text').should('be.visible'); //radio buttons\ncy.get(\"[value=radio2]\").check().should('be.checked'); //pop ups e.g. alert button",
+              "err": {},
+              "uuid": "35258f2f-c39f-49c2-af5e-31c34d8a37de",
+              "parentUUID": "1d2f390e-ed78-49eb-9dd8-ea9f6ff10753",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "35258f2f-c39f-49c2-af5e-31c34d8a37de"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 15429,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
   ],
   "meta": {
     "mocha": {
