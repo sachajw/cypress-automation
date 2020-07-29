@@ -30,7 +30,8 @@ describe('My First Test Suite', function()
         {
             $el.find('button').click();    
         }
-    } );//assert if logo text is correctly dispalyed
+    } );
+    //assert if logo text is correctly displayed
         cy.get('brand').should('have.text', "GREENCART");
 
         //this prints out logs
